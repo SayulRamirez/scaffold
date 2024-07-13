@@ -5,6 +5,8 @@ import com.metaphorce.api.tarea.repository.TareaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TareaService implements ITareaService {
     @Autowired
@@ -16,6 +18,12 @@ public class TareaService implements ITareaService {
     public void addTarea(Tarea tarea) {
 
         tareaRepository.save(tarea);
+    }
+
+    @Override
+    public List<Tarea> getTareas() {
+
+        return tareaRepository.findAll();
     }
 
 }
