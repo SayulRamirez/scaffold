@@ -11,4 +11,6 @@ public interface ITareaService {
     List<Tarea> getTareas();
 
     Tarea updateStatus(Long id, boolean status);
+
+    void deleteTarea(Long id);
 }

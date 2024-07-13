@@ -39,4 +39,10 @@ public class TareaService implements ITareaService {
         return tarea;
     }
 
+    @Override
+    public void deleteTarea(Long id) {
+
+        tareaRepository.deleteById(id);
+    }
+
 }
