@@ -1,6 +1,7 @@
 package com.metaphorce.api.tarea.controller;
 
 
+import com.metaphorce.api.tarea.model.ActulizarTareaRequest;
 import com.metaphorce.api.tarea.model.Tarea;
 import com.metaphorce.api.tarea.service.ITareaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,5 +28,13 @@ public class TareaController {
     public ResponseEntity<List<Tarea>> getAll() {
 
         return ResponseEntity.ok(serviceTarea.getTareas());
+    }
+
+    @PutMapping(value = "update")
+    public ResponseEntity<Tarea> updateStatus(@RequestBody ActulizarTareaRequest request) {
+
+        Tarea tarea = serviceTarea.updateStatus(request.id(), request.status());
+
+        return ResponseEntity.ok(tarea);
     }
 }

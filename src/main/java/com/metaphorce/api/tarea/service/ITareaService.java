@@ -9,4 +9,6 @@ public interface ITareaService {
     void addTarea(Tarea tarea);
 
     List<Tarea> getTareas();
+
+    Tarea updateStatus(Long id, boolean status);
 }
